@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./images.css">
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/CSS" href="./responsive.css" />
+    <title>Image Editor</title>
+</head>
+
+<body id="body">
+    <div id="box">
+        <div id="filter">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFuM9FZFQvNw2Gym8x8XK-u1K80OBksRG0Ow&usqp=CAU"
+                id="myimg">
+        </div>
+    </div>
+    <div class="container" id="container">
+        <div id="box2">
+            <label for "blur" id="bl">Blur (0px)</label><br>
+            <input type="range" id="blur" min="0.0" max="5.0" step="0.1" value="0.0" oninput="update()">
+            <br>
+            <label for "grayscale" id="gray">Grayscale (0%)</label><br>
+            <input type="range" id="grayscale" min="0" max="100" step="1" value="0" oninput="update()">
+            <br>
+            <label for "sepia" id="sep">Sepia (0%)</label><br>
+            <input type="range" id="sepia" min="0" max="100" step="1" value="0" oninput="update()">
+            <br>
+            <label for "contrast" id="contr">Contrast (100%)</label><br>
+            <input type="range" id="contrast" min="0" max="200" step="1" Value="100" oninput="update()">
+            <br>
+            <label for "brightness" id="bright">Brightness (100%)</label><br>
+            <input type="range" id="brightness" min="0" max="200" step="1" Value="100" oninput="update()">
+            <br>
+            <label for "opacity" id="opa">Opacity (100%)</label><br>
+            <input type="range" id="opacity" min="0" max="100" step="1" Value="100" oninput="update()">
+        </div>
+        <div id="box3">
+            <button class="btn" id="reset" onclick="reset()">RESET</button>
+            <button class="btn" id="prev" onclick="prev()">
+                <i class="fas fa-arrow-left"></i> Previous image
+            </button>
+
+            <button class="btn" id="next" onclick="next()">
+                Next image <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+        <br>
+        <h4 id="own" onclick="own()">Use your own image</h4>
+        <button id="mode" onclick="change()">DAY MODE ON ☀️</button>
+        <script>
+            var urlOwn, req, dayOn = true;
+            var a, b, c, d, e, f;
+            var blur = document.getElementById("blur");
+            var grayscale = document.getElementById("grayscale");
+            var sepia = document.getElementById("sepia");
+            var contrast = document.getElementById("contrast");
+            var brightness = document.getElementById("brightness");
+            var opacity = document.getElementById("opacity");
+            var image = document.getElementById("myimg");
+            var blText = document.getElementById("bl");
+            var grayText = document.getElementById("gray");
+            var sepText = document.getElementById("sep");
+            var contrText = document.getElementById("contr");
+            var brightText = document.getElementById("bright");
+            var opaText = document.getElementById("opa");
+            var mode = document.getElementById("mode");
+            var label = document.querySelectorAll("label");
+            var btn = document.getElementsByClassName("btn");
+            var ownImg = document.getElementById("own");
+            function update() {
+                a = blur.value;
+                b = grayscale.value;
+                c = sepia.value;
+                d = contrast.value;
+                e = brightness.value;
+                f = opacity.value;
+                image.style.filter = "blur(" + a + "px) " + "grayscale(" + b + "%) " + "sepia(" + c + "%) " + "contrast(" + d + "%) " + "brightness(" + e + "%) " + "opacity(" + f + "%)";
+                blText.innerHTML = "Blur (" + a + "px)";
+                grayText.innerHTML = "Grayscale (" + b + "%)";
+                sepText.innerHTML = "Sepia (" + c + "%)";
+                contrText.innerHTML = "Contrast (" + d + "%)";
+                brightText.innerHTML = "Brightness (" + e + "%)";
+                opaText.innerHTML = "Opacity (" + f + "%)";
+            }
+            function reset() {
+                blur.value = 0.0;
+                grayscale.value = 0;
+                sepia.value = 0;
+                contrast.value = 100;
+                brightness.value = 100;
+                opacity.value = 100;
+                update();
+            }
+            reset();
+            function own() {
+                urlOwn = window.prompt("Enter url: ");
+                req = new XMLHttpRequest();
+                req.open("GET", urlOwn, true);
+                req.send();
+                req.onload = function () {
+                    status = req.status;
+                    if (req.status == 200) {
+                        image.src = urlOwn;
+                    }
+                }
+            }
+            function change() {
+                if (dayOn) {
+                    night();
+                    dayOn = false;
+                }
+                else {
+                    day();
+                    dayOn = true;
+                }
+            }
+            function day() {
+                document.getElementById('container').style = "background: #87CEFA;"
+                document.getElementById('box').style = "background-color: pink; border: 3px solid pink;"
+                document.getElementById('body').style = "background: #EEEEEE;"
+                mode.innerHTML = "DAY MODE ON ☀️";
+                for (let x = 0; x < label.length; x++) {
+                    label[x].style = "color:black;";
+                }
+                for (let x = 0; x < btn.length; x++) {
+                    btn[x].style = "color:black;";
+                }
+                ownImg.style.color = "black";
+                mode.style.color = "black";
+            }
+            function night() {
+                document.getElementById('box').style = "background-color: #546E99; border: 3px solid #546E99;"
+                document.getElementById('container').style = "background: #152238;"
+                document.getElementById('body').style = "background: #222222;"
+                mode.innerHTML = "NIGHT MODE ON 🌙";
+                for (let x = 0; x < label.length; x++) {
+                    label[x].style = "color:white;";
+                }
+                for (let x = 0; x < btn.length; x++) {
+                    btn[x].style = "color:white;";
+                }
+                ownImg.style.color = "white";
+                mode.style.color = "white";
+            }
+            var url = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFuM9FZFQvNw2Gym8x8XK-u1K80OBksRG0Ow&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa6XrzCnOtufYXbBK7cmQPDsIVx5xXm7ymiA&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT5saEnmZ_BYwzsDy12ykQQFvVjMij5A7OaA&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHbNVyWGdGdYomuXg0IMfp-oo8SRoB1GudoQ&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4yLDexTlMiDT1VcyjQxsRLdwuQqINJuJoYQ&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrSs0I24GtTsrtKlWsgtgRjNaEHNVwZPKuiKsyh3AY_CNttkof5IiYbaEr&s=10", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBVnbfWYd9aWDP3Nhz52H-j9iO4TOPiQdkUg&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMrHvP5QrdOVPE2UUIp7bdHnEIC7srP7XhfA&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2JQGtdXky1Z1RuRUDeDu8bpoIxMgs0H9IEA&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEgT2riAqvy_1iVAA3tKeG1JkTKnBA2g4lFQ&usqp=CAU"];
+            var i = 0;
+            function next() {
+                if (i == 9) {
+                    i = 0;
+                }
+                else {
+                    i++;
+                }
+                document.getElementById('myimg').src = url[i];
+                reset();
+            }
+            function prev() {
+                if (i == 0) {
+                    i = 9;
+                }
+                else {
+                    i--;
+                }
+                document.getElementById('myimg').src = url[i];
+                reset();
+            }
+            function own() {
+                var urlOwn = window.prompt("Enter url: ");
+                document.getElementById('myimg').src = urlOwn;
+                reset();
+            }
+        </script>
+</body>
+
+</html>

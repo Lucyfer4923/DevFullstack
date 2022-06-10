@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Page Title</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Times New Roman;
+      font-size: 15pt;
+      background-color: lightblue;
+    }
+
+    .marquee {
+      color: red;
+      padding: 1px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 10px;
+      overflow: auto;
+      overflow-style: marquee, panner;
+
+    }
+
+    .marquee p {
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+    }
+
+    .goog-logo-link {
+      display: none !important;
+    }
+
+    .goog-te-gadget {
+      color: transparent !important;
+    }
+
+    .goog-te-gadget .goog-te-combo {
+      color: blue !important;
+    }
+
+    .collapsible {
+      background-color: DodgerBlue;
+      color: white;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: center;
+      font-weight: bold;
+      outline: none;
+      font-size: 16px;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+    }
+
+    .collapsible1 {
+      background-color: red;
+    }
+
+    .active,
+    .collapsible:hover {
+      background-color: #555;
+      border-radius: 20px;
+
+    }
+
+    .collapsible:after {
+      content: '\002B';
+      color: white;
+      font-weight: bold;
+      float: right;
+      margin-left: 5px;
+    }
+
+    .active:after {
+      content: "\2212";
+    }
+
+    button.collapsible {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      padding: 10px;
+      font-weight: bold;
+    }
+
+    .content {
+      padding: 0 10px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 1s ease-out;
+      background-color: #f1f1f1;
+      margin-bottom: 10px;
+      text-align: center;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+    }
+
+    a {
+      color: red;
+    }
+
+    p {
+      border-radius: 10px;
+      border: solid 2px red;
+      background: white;
+      text-align: center;
+      font-size: 16px;
+      padding: 2px;
+    }
+
+    .collapsible {
+      border-radius: 10px;
+      font-family: Times New Roman;
+
+    }
+
+    li {
+      font-size: 16px;
+    }
+
+    .collapsible {
+      background-image: linear-gradient(to right, #1D4350 0%, #A43931 51%, #1D4350 100%)
+    }
+
+    .collapsible:hover {
+      background-position: right center;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="collapsible">For JAVA</button>
+  <div class="content">
+    <a href="https://www.tutorialspoint.com/java/" target="_blank">Tutorials Point</a><br>
+    <a href="https://www.javatpoint.com/java-tutorial" target="_blank">Java T Point</a><br>
+    <a href="https://www.java2novice.com" target="_blank">Java 2 Novice</a><br>
+    <a href="https://www.howtodoinjava.com" target="_blank">How to do in Java</a><br>
+    <a href="https://www.w3schools.com/java/" target="_blank">W3 Schools</a><br>
+    <a href="https://www.guru99.com/java-tutorial.html" target="_blank">Guru 99</a><br>
+    <a href="https://www.geeksforgeeks.org/java-tutorials/" target="_blank">Geeks For Geeks</a><br>
+    <a href="https://codescracker.com/java/index.htm" target="_blank">Codes Cracker</a><br>
+  </div>
+
+  <button class="collapsible">For C</button>
+  <div class="content">
+    <a href="https://www.tutorialspoint.com/cprogramming/" target="_blank">Tutorials Point</a><br>
+    <a href="https://www.javatpoint.com/c-programming-language-tutorial" target="_blank">Java T Point</a><br>
+    <a href="https://www.w3schools.in/c-tutorial/" target="_blank">W3 Schools</a><br>
+    <a href="https://www.guru99.com/c-programming-tutorial.html" target="_blank">Guru 99</a><br>
+    <a href="https://www.learn-c.org/" target="_blank">Learn C</a><br>
+    <a href="https://www.studytonight.com/c/" target="_blank">Study Tonight</a><br>
+    <a href="https://www.geeksforgeeks.org/c-programming-language/" target="_blank">Geeks For Geeks</a><br>
+    <a href="https://www.includehelp.com/c/" target="_blank">Include Help</a><br>
+    <a href="https://codescracker.com/c/index.htm" target="_blank">Codes Cracker</a><br>
+  </div>
+
+  <button class="collapsible">For C++</button>
+  <div class="content">
+    <a href="https://www.tutorialspoint.com/cplusplus/" target="_blank">Tutorials Point</a><br>
+    <a href="https://www.javatpoint.com/cpp-tutorial" target="_blank">Java T Point</a><br>
+    <a href="https://www.w3schools.com/cpp/" target="_blank">W3 Schools</a><br>
+    <a href="https://www.guru99.com/cpp-tutorial.html" target="_blank">Guru 99</a><br>
+    <a href="https://www.studytonight.com/cpp/" target="_blank">Study Tonight</a><br>
+    <a href="https://www.geeksforgeeks.org/c-plus-plus/" target="_blank">Geeks For Geeks</a><br>
+    <a href="https://codescracker.com/cpp/" target="_blank">Codes Cracker</a><br>
+  </div>
+
+  <button class="collapsible">For JavaScript</button>
+  <div class="content">
+    <a href="https://www.tutorialspoint.com/javascript/" target="_blank">Tutorials Point</a><br>
+    <a href="https://www.javatpoint.com/javascript-tutorial" target="_blank">Java T Point</a><br>
+    <a href="https://www.w3schools.com/js/" target="_blank">W3 Schools</a><br>
+    <a href="https://javascript.info/" target="_blank">Modern JavaScript</a><br>
+    <a href="https://www.guru99.com/interactive-javascript-tutorials.html" target="_blank">Guru 99</a><br>
+    <a href="https://www.geeksforgeeks.org/javascript-tutorial/" target="_blank">Geeks For Geeks</a><br>
+    <a href="http://www.javascriptkit.com/javatutors/" target="_blank">JavaScript Kit</a><br>
+    <a href="https://www.quackit.com/javascript/tutorial/" target="_blank">Quackit</a><br>
+  </div>
+
+  <button class="collapsible">For Python</button>
+  <div class="content">
+    <a href="https://www.tutorialspoint.com/python/" target="_blank">Tutorials Point</a><br>
+    <a href="https://www.javatpoint.com/python-tutorial" target="_blank">Java T Point</a><br>
+    <a href="https://www.w3schools.com/python/" target="_blank">W3 Schools</a><br>
+    <a href="https://www.learnpython.org/" target="_blank">Learn Python</a><br>
+    <a href="https://www.studytonight.com/python/" target="_blank">Study Tonight</a><br>
+    <a href="https://codescracker.com/python/" target="_blank">Codes Cracker</a><br>
+  </div>
+
+  <button class="collapsible">For PHP</button>
+  <div class="content">
+    <a href="https://www.tutorialspoint.com/php/" target="_blank">Tutorials Point</a><br>
+    <a href="https://www.javatpoint.com/php-tutorial" target="_blank">Java T Point</a><br>
+    <a href="https://www.w3schools.com/php/" target="_blank">W3 Schools</a><br>
+    <a href="https://www.guru99.com/php-tutorials.html" target="_blank">Guru 99</a><br>
+    <a href="https://www.phptpoint.com/php-tutorial/" target="_blank">PHP T Point</a><br>
+    <a href="https://www.geeksforgeeks.org/php/" target="_blank">Geeks For Geeks</a><br>
+    <a href="https://www.tutorialrepublic.com/php-tutorial/" target="_blank">Tutorial Republic</a><br>
+    <a href="https://phptherightway.com/" target="_blank">PHP The Right Way</a><br>
+  </div>
+
+  <button class="collapsible">For Ruby</button>
+  <div class="content">
+    <a href="https://www.tutorialspoint.com/ruby/" target="_blank">Tutorials Point</a><br>
+    <a href="https://www.javatpoint.com/ruby-tutorial" target="_blank">Java T Point</a><br>
+    <a href="https://www.studytonight.com/ruby/" target="_blank">Study Tonight</a><br>
+    <a href="https://www.w3resource.com/ruby/" target="_blank">W3 Resources</a><br>
+  </div>
+
+  <button class="collapsible">For HTML</button>
+  <div class="content">
+    <a href="https://www.tutorialspoint.com/html/" target="_blank">Tutorials Point</a><br>
+    <a href="https://www.javatpoint.com/html-tutorial" target="_blank">Java T Point</a><br>
+    <a href="https://www.w3schools.com/html/" target="_blank">W3 Schools</a><br>
+    <a href="https://www.learn-html.org/" target="_blank">Learn HTML</a><br>
+    <a href="https://www.geeksforgeeks.org/html-tutorials/" target="_blank">Geeks For Geeks</a><br>
+  </div>
+
+  <button class="collapsible">For HTML5</button>
+  <div class="content">
+    <a href="https://www.tutorialspoint.com/html5/" target="_blank">Tutorials Point</a><br>
+    <a href="https://www.w3schools.com/html/html5_intro.asp" target="_blank">W3 Schools</a><br>
+    <a href="https://www.html5tutorial.info/" target="_blank">HTML5 Tutorial</a><br>
+    <a href="http://tutorialspark.com/html5/index.php" target="_blank">Tutorials Park</a><br>
+    <a href="https://www.html5canvastutorials.com/" target="_blank">Html5 Canvas Tutorials</a><br>
+    <a href="http://www.freetimelearning.com/html5-tutorial.php" target="_blank">Free Time Learning</a><br>
+  </div>
+
+  <button class="collapsible">For React</button>
+  <div class="content">
+    <a href="https://reactjs.org/" target="_blank">React</a><br>
+    <a href="https://devhints.io/react" target="_blank">CheatSheet</a><br>
+  </div>
+
+  <button class="collapsible">For React Native</button>
+  <div class="content">
+    <a href="https://www.tutorialspoint.com/react_native/" target="_blank">Tutorials Point</a><br>
+    <a href="https://www.javatpoint.com/react-native-tutorial" target="_blank">Java T Point</a><br>
+  </div>
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>
